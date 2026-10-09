@@ -1,29 +1,35 @@
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
 html {
     width: 100%;
     overflow-x: hidden;
     scroll-behavior: smooth;
 }
+
 body {
-    width: 100%;
     min-width: 320px;
+    width: 100%;
+    overflow-x: hidden;
     background: #f1eee4;
     color: #263c27;
     font-family: "Montserrat", Arial, sans-serif;
-    overflow-x: hidden;
 }
+
 img {
     display: block;
     max-width: 100%;
 }
+
 a {
-    text-decoration: none;
     color: inherit;
+    text-decoration: none;
 }
+
 header {
     position: absolute;
     top: 0;
@@ -34,15 +40,14 @@ header {
     display: flex;
     align-items: center;
     padding: 0 clamp(20px, 3.5vw, 36px);
-    color: #263c27;
 }
+
 .logo {
     flex-shrink: 0;
-    font-family: "Cormorant Garamond", Georgia, serif;
-    font-size: clamp(12px, 1.1vw, 15px);
-    font-weight: 600;
+    font: 600 clamp(12px, 1.1vw, 15px) "Cormorant Garamond", Georgia, serif;
     letter-spacing: .5px;
 }
+
 nav {
     display: flex;
     align-items: center;
@@ -50,103 +55,111 @@ nav {
     margin-left: auto;
     margin-right: clamp(15px, 2.5vw, 25px);
 }
+
 nav a {
     font-size: clamp(5px, .45vw, 7px);
     letter-spacing: 1.2px;
     white-space: nowrap;
 }
+
 .bag {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
-    font-size: clamp(12px, 1.1vw, 15px);
 }
+
 .hero {
     position: relative;
     width: 100%;
-    aspect-ratio: 1363 / 325;
     min-height: 280px;
+    aspect-ratio: 1363 / 325;
     background:
-        linear-gradient(
-            90deg,
-            rgba(202, 210, 188, .96) 0%,
-            rgba(202, 210, 188, .84) 35%,
-            rgba(202, 210, 188, .25) 72%,
-            rgba(202, 210, 188, .05) 100%
-        ),
-        url("../images/hero.jpg");
-    background-size: 100% 100%;
-    background-position: center;
-    background-repeat: no-repeat;
+        linear-gradient(90deg, rgba(202,210,188,.96), rgba(202,210,188,.84) 35%, rgba(202,210,188,.25) 72%, rgba(202,210,188,.05)),
+        url("../images/hero.jpg") center / 100% 100% no-repeat;
 }
+
 .hero-text {
     position: absolute;
     left: clamp(25px, 3.5vw, 36px);
     top: clamp(77px, 8vw, 120px);
     max-width: 450px;
 }
-.hero h1 {
+
+.hero h1,
+.hero h2,
+.flavor-title h2,
+.featured-text h2,
+.ingredients-title h2,
+.philosophy-title h2,
+.bottom h2 {
     font-family: "Cormorant Garamond", Georgia, serif;
-    font-size: clamp(30px, 3.4vw, 45px);
     font-weight: 500;
+}
+
+.hero h1 {
+    font-size: clamp(30px, 3.4vw, 45px);
     line-height: .9;
 }
+
 .hero h2 {
-    font-family: "Cormorant Garamond", Georgia, serif;
+    margin-top: 4px;
     font-size: clamp(22px, 2.4vw, 32px);
     font-style: italic;
-    font-weight: 500;
     line-height: 1;
-    margin-top: 4px;
 }
+
 .hero p {
+    margin: 12px 0 19px;
     font-size: clamp(7px, .7vw, 9px);
-    margin-top: 12px;
-    margin-bottom: 19px;
 }
-.link {
+
+.link,
+.bottom-link {
     display: inline-block;
+    padding-bottom: 5px;
     font-size: clamp(5px, .5vw, 7px);
     letter-spacing: 1.2px;
-    padding-bottom: 5px;
-    border-bottom: 1px solid rgba(38, 60, 39, .45);
+    border-bottom: 1px solid rgba(38,60,39,.45);
 }
-.link span {
-    font-size: 10px;
+
+.link span,
+.bottom-link span {
     margin-left: 4px;
+    font-size: 10px;
 }
+
 .flavors {
     width: 100%;
     min-height: 160px;
     display: flex;
     align-items: center;
     gap: clamp(20px, 3vw, 35px);
-    padding:
-        clamp(16px, 2vw, 25px)
-        clamp(20px, 3.5vw, 36px);
+    padding: clamp(16px, 2vw, 25px) clamp(20px, 3.5vw, 36px);
     background: #f5f2e9;
 }
+
 .flavor-title {
     width: clamp(160px, 20vw, 205px);
     flex-shrink: 0;
 }
+
 .flavor-title small,
 .featured-text small,
 .ingredients-title small,
 .philosophy-title small {
     display: block;
+    margin-bottom: 9px;
     font-size: clamp(5px, .5vw, 7px);
     font-weight: 500;
     letter-spacing: 1.8px;
-    margin-bottom: 9px;
 }
+
 .flavor-title h2 {
-    font-family: "Cormorant Garamond", Georgia, serif;
     font-size: clamp(21px, 2.3vw, 27px);
-    font-weight: 500;
     line-height: .88;
 }
+
 .flavor-items {
     flex: 1;
     min-width: 0;
@@ -154,59 +167,73 @@ nav a {
     grid-template-columns: repeat(5, minmax(0, 1fr));
     gap: clamp(5px, .8vw, 9px);
 }
+
 .flavor {
     min-width: 0;
 }
+
 .flavor img {
     width: 100%;
-    aspect-ratio: 0.72;
+    aspect-ratio: .72;
     object-fit: fill;
 }
+
 .flavor p {
+    margin-top: 7px;
     text-align: center;
     font-size: clamp(4px, .45vw, 6px);
     letter-spacing: .8px;
-    margin-top: 7px;
     white-space: nowrap;
 }
+
 .featured {
     width: 100%;
+    min-height: 247px;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    min-height: 247px;
-    aspect-ratio: 2 / 0.72;
+    aspect-ratio: 2 / .72;
 }
+
 .featured-image {
-    width: 100%;
     min-width: 0;
     overflow: hidden;
 }
-.featured-image img {
+
+.featured-image img,
+.ingredients-image img,
+.bottom > img {
     width: 100%;
     height: 100%;
     object-fit: fill;
     object-position: center;
 }
+
 .featured-text {
+    position: relative;
     min-width: 0;
+    overflow: hidden;
+    padding: clamp(30px, 4vw, 55px);
     background: #dce2cf;
-    padding:
-        clamp(25px, 3vw, 40px)
-        clamp(25px, 3.5vw, 40px);
 }
+
+.featured-content {
+    position: relative;
+    z-index: 2;
+}
+
 .featured-text h2 {
-    font-family: "Cormorant Garamond", Georgia, serif;
-    font-size: clamp(27px, 3vw, 36px);
-    font-weight: 500;
-    line-height: .86;
     margin-bottom: 19px;
+    font-size: clamp(27px, 3vw, 36px);
+    line-height: .86;
 }
+
 .details {
     display: flex;
     flex-direction: column;
     gap: 9px;
     margin-bottom: 22px;
 }
+
 .details p {
     display: flex;
     align-items: center;
@@ -215,382 +242,120 @@ nav a {
     letter-spacing: 1px;
     white-space: nowrap;
 }
-.featured-text {
-    position: relative;
-    overflow: hidden;
-    min-width: 0;
-    background: #dce2cf;
-    padding: clamp(30px, 4vw, 55px);
-}
-.featured-content {
-    position: relative;
-    z-index: 2;
-}
+
 .featured-decor {
     position: absolute;
+    z-index: 1;
     right: 0;
     bottom: 0;
     width: 45%;
     height: 100%;
     object-fit: contain;
     object-position: right bottom;
-    z-index: 1;
     pointer-events: none;
 }
-@media (max-width: 900px) {
-    .featured-decor {
-        width: 42%;
-    }
-}
-@media (max-width: 700px) {
-    .featured-decor {
-        width: 45%;
-        height: 55%;
-        right: -10px;
-        bottom: 0;
-        object-fit: contain;
-        object-position: right bottom;
-        opacity: .9;
-    }
 
-}
 .ingredients {
     width: 100%;
     min-height: 164px;
     display: grid;
     grid-template-columns: 34% 66%;
     align-items: center;
-    padding:
-        clamp(18px, 2vw, 25px)
-        clamp(20px, 3.5vw, 36px);
-    background: #f1eee4;
+    padding: clamp(18px, 2vw, 25px) clamp(20px, 3.5vw, 36px);
 }
-.ingredients-title {
-    min-width: 0;
-}
+
 .ingredients-title h2 {
-    font-family: "Cormorant Garamond", Georgia, serif;
     font-size: clamp(23px, 2.5vw, 30px);
-    font-weight: 500;
     line-height: .87;
 }
+
 .ingredients-image {
     width: 100%;
     height: clamp(120px, 13vw, 180px);
     overflow: hidden;
 }
-.ingredients-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: fill;
-    object-position: center;
-}
+
 .philosophy {
     width: 100%;
     min-height: 111px;
     display: grid;
     grid-template-columns: 43% 42% 15%;
     align-items: center;
-    padding:
-        18px
-        clamp(20px, 3.5vw, 36px);
+    padding: 18px clamp(20px, 3.5vw, 36px);
     background: #dce2cf;
 }
-.philosophy-title {
+
+.philosophy-title,
+.philosophy-text {
     min-width: 0;
 }
+
 .philosophy-title h2 {
-    font-family: "Cormorant Garamond", Georgia, serif;
     font-size: clamp(14px, 1.55vw, 19px);
-    font-weight: 500;
     line-height: .83;
 }
+
 .philosophy-title i {
     font-style: italic;
 }
+
 .philosophy-text {
-    min-width: 0;
-    border-left: 1px solid rgba(38, 60, 39, .25);
     padding-left: clamp(15px, 2vw, 23px);
+    border-left: 1px solid rgba(38,60,39,.25);
 }
+
 .philosophy-text p {
     font-size: clamp(5px, .55vw, 7px);
     line-height: 1.7;
 }
+
 .brand-mark {
     text-align: center;
-    font-family: "Cormorant Garamond", Georgia, serif;
-    font-size: clamp(22px, 2.5vw, 30px);
+    font: clamp(22px, 2.5vw, 30px) "Cormorant Garamond", Georgia, serif;
     opacity: .65;
 }
+
 .brand-mark span {
     display: block;
-    font-family: "Montserrat", sans-serif;
-    font-size: clamp(4px, .45vw, 6px);
+    font: clamp(4px, .45vw, 6px) "Montserrat", sans-serif;
     letter-spacing: 1.7px;
 }
+
 .bottom {
-    width: 100%;
     position: relative;
-    overflow: hidden;
+    width: 100%;
     height: clamp(180px, 20vw, 280px);
+    overflow: hidden;
     background: #19341d;
 }
+
 .bottom > img {
-    width: 100%;
-    height: 100%;
-    object-fit: fill;
-    object-position: center;
     opacity: .75;
 }
+
 .bottom::after {
     content: "";
     position: absolute;
     inset: 0;
-    background:
-        linear-gradient(
-            90deg,
-            rgba(18, 51, 27, .10),
-            rgba(18, 51, 27, .25)
-        );
+    background: linear-gradient(90deg, rgba(18,51,27,.10), rgba(18,51,27,.25));
 }
+
 .bottom-text {
     position: absolute;
     z-index: 2;
-    right: clamp(6%, 11vw, 11%);
     top: clamp(27px, 3vw, 45px);
+    right: clamp(6%, 11vw, 11%);
 }
+
 .bottom h2 {
     color: #f4f0e3;
-    font-family: "Cormorant Garamond", Georgia, serif;
     font-size: clamp(27px, 3vw, 38px);
-    font-weight: 500;
     line-height: .84;
 }
+
 .bottom-link {
-    display: inline-block;
-    color: #f4f0e3;
-    font-size: clamp(5px, .5vw, 7px);
-    letter-spacing: 1.4px;
     margin-top: 20px;
-    padding-bottom: 5px;
-    border-bottom: 1px solid rgba(244, 240, 227, .6);
-}
-.bottom-link span {
-    font-size: 10px;
-    margin-left: 4px;
-}
-@media (max-width: 900px) {
-    .flavors {
-        gap: 18px;
-    }
-    .flavor-title {
-        width: 170px;
-    }
-    .flavor-items {
-        gap: 6px;
-    }
-    .philosophy {
-        grid-template-columns: 45% 40% 15%;
-    }
-}
-@media (max-width: 700px) {
-    header {
-        padding: 0 22px;
-    }
-    nav {
-        display: none;
-    }
-    .hero {
-        width: 100%;
-        height: 500px;
-        aspect-ratio: auto;
-        background:
-            linear-gradient(
-                180deg,
-                rgba(202, 210, 188, .88) 0%,
-                rgba(202, 210, 188, .25) 65%,
-                rgba(202, 210, 188, .08) 100%
-            ),
-            url("../images/hero.jpg");
-        background-size: 100% 100%;
-        background-position: center;
-        background-repeat: no-repeat;
-    }
-    .hero-text {
-        left: 25px;
-        top: 105px;
-        max-width: calc(100% - 50px);
-    }
-    .hero h1 {
-        font-size: 38px;
-    }
-    .hero h2 {
-        font-size: 28px;
-    }
-    .flavors {
-        display: block;
-        padding: 25px;
-    }
-    .flavor-title {
-        width: 100%;
-        margin-bottom: 20px;
-    }
-    .flavor-items {
-        display: flex;
-        overflow-x: auto;
-        gap: 10px;
-        padding-bottom: 8px;
-        scrollbar-width: thin;
-    }
-    .flavor {
-        flex: 0 0 100px;
-    }
-    .flavor img {
-        width: 100%;
-        height: 140px;
-        object-fit: fill;
-    }
-    .featured {
-        display: grid;
-        grid-template-columns: 1fr;
-        height: auto;
-        aspect-ratio: auto;
-    }
-    .featured-image {
-        width: 100%;
-        height: 330px;
-    }
-    .featured-image img {
-        width: 100%;
-        height: 100%;
-        object-fit: fill;
-    }
-    .featured-text {
-        min-height: 280px;
-        padding: 30px 25px;
-    }
-    .ingredients {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 20px;
-        padding: 25px;
-    }
-    .ingredients-image {
-        width: 100%;
-        height: 200px;
-    }
-    .ingredients-image img {
-        width: 100%;
-        height: 100%;
-        object-fit: fill;
-    }
-    .philosophy {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 20px;
-        padding: 25px;
-    }
-    .philosophy-text {
-        border-left: none;
-        border-top: 1px solid rgba(38, 60, 39, .25);
-        padding-left: 0;
-        padding-top: 18px;
-    }
-    .brand-mark {
-        display: none;
-    }
-    .bottom {
-        width: 100%;
-        height: 330px;
-    }
-    .bottom > img {
-        width: 100%;
-        height: 100%;
-        object-fit: fill;
-    }
-    .bottom-text {
-        left: 25px;
-        right: auto;
-        top: 45px;
-    }
-}
-@media (max-width: 450px) {
-    .hero {
-        height: 450px;
-    }
-    .hero-text {
-        left: 22px;
-        top: 100px;
-    }
-    .hero h1 {
-        font-size: 32px;
-    }
-    .hero h2 {
-        font-size: 24px;
-    }
-    .hero p {
-        font-size: 7px;
-    }
-    .featured-image {
-        height: 280px;
-    }
-    .featured-text {
-        padding: 28px 25px;
-    }
-    .ingredients-title h2 {
-        font-size: 25px;
-    }
-    .ingredients-image {
-        height: 180px;
-    }
-    .philosophy-title h2 {
-        font-size: 17px;
-    }
-    .bottom {
-        height: 300px;
-    }
-    .bottom h2 {
-        font-size: 30px;
-    }
-}
-@media (max-width: 360px) {
-    header {
-        padding: 0 18px;
-    }
-    .hero {
-        height: 420px;
-    }
-    .hero-text {
-        left: 20px;
-        top: 90px;
-    }
-    .hero h1 {
-        font-size: 29px;
-    }
-    .hero h2 {
-        font-size: 22px;
-    }
-    .flavors {
-        padding: 20px;
-    }
-    .featured-image {
-        height: 250px;
-    }
-    .featured-text {
-        padding: 25px 20px;
-    }
-    .ingredients {
-        padding: 20px;
-    }
-    .philosophy {
-        padding: 20px;
-    }
-    .bottom-text {
-        left: 20px;
-        top: 35px;
-    }
-    .bottom h2 {
-        font-size: 27px;
-    }
+    color: #f4f0e3;
+    border-color: rgba(244,240,227,.6);
+    letter-spacing: 1.4px;
 }
